@@ -64,6 +64,7 @@ variable account_number {
 
 variable network_account_number {
   description = "AWS account number of network account"
+  default = ""
 }
 
 variable common_tags {
