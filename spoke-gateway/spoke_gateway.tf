@@ -37,6 +37,7 @@ resource "aviatrix_spoke_gateway" "spoke_gateway_1" {
       { TimeFlag    = "24x7"},
       var.common_tags
     )    
+      
 }
 
 resource "aviatrix_spoke_transit_attachment" "spoke_attach_1" {
@@ -44,3 +45,4 @@ resource "aviatrix_spoke_transit_attachment" "spoke_attach_1" {
     transit_gw_name = var.transit_gateway_name != "" ? var.transit_gateway_name : "transit-${var.aws_region}"
     route_tables    = var.managed_route_tables_list
 }
+
