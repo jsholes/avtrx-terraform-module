@@ -37,12 +37,6 @@ resource "aviatrix_spoke_gateway" "spoke_gateway_1" {
       { TimeFlag    = "24x7"},
       var.common_tags
     )    
-      
-    # // define these dependencies or the IAM roles needed to turn down resources
-    # // can be deleted before the gateway is destroyed
-    # depends_on = [
-    #   aviatrix_account.account_1,
-    # ]
 }
 
 resource "aviatrix_spoke_transit_attachment" "spoke_attach_1" {
@@ -50,15 +44,3 @@ resource "aviatrix_spoke_transit_attachment" "spoke_attach_1" {
     transit_gw_name = var.transit_gateway_name != "" ? var.transit_gateway_name : "transit-${var.aws_region}"
     route_tables    = var.managed_route_tables_list
 }
-
-# // This resource is what actually turns on firewall inspection of traffic
-# // to/from this spoke.
-# resource "aviatrix_transit_firenet_policy" "transit_firenet_policy" {
-#   transit_firenet_gateway_name = var.transit_gateway_name != "" ? var.transit_gateway_name : "transit-${var.aws_region}"
-#   inspected_resource_name      = "SPOKE:${aviatrix_spoke_gateway.spoke_gateway_1.gw_name}"
-  
-#   depends_on = [
-#     aviatrix_spoke_gateway.spoke_gateway_1,
-#     aviatrix_spoke_transit_attachment.spoke_attach_1,
-#   ]
-# }
