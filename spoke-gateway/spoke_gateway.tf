@@ -38,11 +38,11 @@ resource "aviatrix_spoke_gateway" "spoke_gateway_1" {
       var.common_tags
     )    
       
-    // define these dependencies or the IAM roles needed to turn down resources
-    // can be deleted before the gateway is destroyed
-    depends_on = [
-      aviatrix_account.account_1,
-    ]
+    # // define these dependencies or the IAM roles needed to turn down resources
+    # // can be deleted before the gateway is destroyed
+    # depends_on = [
+    #   aviatrix_account.account_1,
+    # ]
 }
 
 resource "aviatrix_spoke_transit_attachment" "spoke_attach_1" {
