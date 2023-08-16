@@ -10,7 +10,7 @@ locals {
 
 resource "aviatrix_spoke_gateway" "spoke_gateway_1" {
     single_az_ha = true
-    gw_name = "${local.gateway_name_prefix}-${var.aws_region}"
+    gw_name = var.aws_spoke_name
     vpc_id = var.spoke_vpc_id
     cloud_type = 1
     vpc_reg = var.aws_region

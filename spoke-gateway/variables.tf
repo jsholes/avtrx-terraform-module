@@ -11,6 +11,8 @@ variable spoke_vpc_cidr {
   description = "VPC CIDR block"
 }
 
+variable aws_spoke_name {}
+
 variable create_aviatrix_account {
   description = "boolean specifies whether to add account in aviatrix, only do this once per account, not per VPC"
   default     = false
