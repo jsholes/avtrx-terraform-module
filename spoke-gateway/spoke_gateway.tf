@@ -40,9 +40,9 @@ resource "aviatrix_spoke_gateway" "spoke_gateway_1" {
       
 }
 
-resource "aviatrix_spoke_transit_attachment" "spoke_attach_1" {
-    spoke_gw_name   = aviatrix_spoke_gateway.spoke_gateway_1.gw_name
-    transit_gw_name = var.transit_gateway_name != "" ? var.transit_gateway_name : "transit-${var.aws_region}"
-    route_tables    = var.managed_route_tables_list
-}
+# resource "aviatrix_spoke_transit_attachment" "spoke_attach_1" {
+#     spoke_gw_name   = aviatrix_spoke_gateway.spoke_gateway_1.gw_name
+#     transit_gw_name = var.transit_gateway_name != "" ? var.transit_gateway_name : "transit-${var.aws_region}"
+#     route_tables    = var.managed_route_tables_list
+# }
 
