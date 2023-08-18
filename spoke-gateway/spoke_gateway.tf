@@ -21,7 +21,7 @@ resource "aviatrix_spoke_gateway" "spoke_gateway_1" {
     
     // Doing this manually allows us to properly specify dependencies so destroy
     // operations don't get 'stuck'
-    manage_transit_gateway_attachment = false
+    # manage_transit_gateway_attachment = false
     
     // Watch for instances spun up in the Aviatrix subnets and shut them down if found
     // Requires Aviatrix TF provider >= 2.18.0
